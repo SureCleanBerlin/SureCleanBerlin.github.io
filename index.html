@@ -80,7 +80,7 @@
       document.getElementById('resultService').textContent=qty+' '+item.unit+' '+item.name+' · '+item.detail;
       document.getElementById('estimateMeter').style.width=Math.min(100,Math.max(16,total/350*100))+'%';
       const subject='Anfrage '+item.name+' · Preisorientierung '+euro.format(total);
-      const body='Hallo SureClean,\\n\\nich interessiere mich für '+item.name+'.\\nMenge/Fläche: '+qty+' '+item.unit+'\\nEinfache Anfahrt: '+km+' km\\nVerschmutzung: '+selected('dirt').nextElementSibling.innerText.replace('\\n',' · ')+'\\nZugänglichkeit: '+selected('height').nextElementSibling.innerText.replace('\\n',' · ')+'\\nUnverbindliche Preisorientierung: '+euro.format(total)+'\\n\\nMein Name:\\nOrt/PLZ:\\nWunschtermin:\\n\\nIch hänge Fotos zur genaueren Einschätzung an.';
+      const body='Hallo SureClean,\n\nich interessiere mich für '+item.name+'.\nMenge/Fläche: '+qty+' '+item.unit+'\nEinfache Anfahrt: '+km+' km\nVerschmutzung: '+selected('dirt').nextElementSibling.innerText.replace('\n',' · ')+'\nZugänglichkeit: '+selected('height').nextElementSibling.innerText.replace('\n',' · ')+'\nUnverbindliche Preisorientierung: '+euro.format(total)+'\n\nMein Name:\nOrt/PLZ:\nWunschtermin:\n\nIch hänge Fotos zur genaueren Einschätzung an.';
       document.getElementById('estimateMail').href='mailto:SureClean@freenet.de?subject='+encodeURIComponent(subject)+'&body='+encodeURIComponent(body);
     }
     [...serviceInputs,...dirtInputs,...heightInputs,quantity,distance].forEach(el=>el.addEventListener('input',calculate));
